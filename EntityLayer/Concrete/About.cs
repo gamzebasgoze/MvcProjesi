@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class About
+   public class About
     {
+           
         [Key]
-        public int MyProperty { get; set; }
+        public int AboutID { get; set; }
         [StringLength(1000)]
         public string AboutDetails1 { get; set; }
         [StringLength(1000)]
@@ -21,3 +22,9 @@ namespace EntityLayer.Concrete
         public string AboutImage2 { get; set; }
     }
 }
+
+
+
+
+
+

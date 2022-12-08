@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mig1 : DbMigration
+    public partial class mig1_tableadded : DbMigration
     {
         public override void Up()
         {
@@ -11,13 +11,13 @@
                 "dbo.Abouts",
                 c => new
                     {
-                        MyProperty = c.Int(nullable: false, identity: true),
+                        AboutID = c.Int(nullable: false, identity: true),
                         AboutDetails1 = c.String(maxLength: 1000),
                         AboutDetails2 = c.String(maxLength: 1000),
                         AboutImage1 = c.String(maxLength: 100),
                         AboutImage2 = c.String(maxLength: 100),
                     })
-                .PrimaryKey(t => t.MyProperty);
+                .PrimaryKey(t => t.AboutID);
             
             CreateTable(
                 "dbo.Categories",
@@ -37,6 +37,7 @@
                         HeadingID = c.Int(nullable: false, identity: true),
                         HeadingName = c.String(maxLength: 50),
                         HeadingDate = c.DateTime(nullable: false),
+                        HeadingStatus = c.Boolean(nullable: false),
                         CategoryID = c.Int(nullable: false),
                         WriterID = c.Int(nullable: false),
                     })
@@ -53,6 +54,7 @@
                         ContentID = c.Int(nullable: false, identity: true),
                         ContentValue = c.String(maxLength: 1000),
                         ContentDate = c.DateTime(nullable: false),
+                        ContentStatus = c.Boolean(nullable: false),
                         HeadingID = c.Int(nullable: false),
                         WriterID = c.Int(),
                     })
@@ -69,9 +71,12 @@
                         WriterID = c.Int(nullable: false, identity: true),
                         WriterName = c.String(maxLength: 50),
                         WriterSurName = c.String(maxLength: 50),
-                        WriterImage = c.String(maxLength: 100),
-                        WriterMail = c.String(maxLength: 50),
-                        WriterPassword = c.String(maxLength: 20),
+                        WriterImage = c.String(maxLength: 400),
+                        WriterAbout = c.String(maxLength: 100),
+                        WriterMail = c.String(maxLength: 200),
+                        WriterPassword = c.String(maxLength: 200),
+                        WriterTitle = c.String(maxLength: 50),
+                        WriterStatus = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.WriterID);
             
