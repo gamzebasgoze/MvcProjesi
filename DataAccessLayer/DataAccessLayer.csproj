@@ -56,6 +56,7 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -67,10 +68,19 @@
     <Compile Include="EntityFramework\EfContactDal.cs" />
     <Compile Include="EntityFramework\EfContentDal.cs" />
     <Compile Include="EntityFramework\EfHeadingDal.cs" />
+    <Compile Include="EntityFramework\EfMessageDal.cs" />
     <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="Migrations\202212061032574_mig1_tableadded.cs" />
     <Compile Include="Migrations\202212061032574_mig1_tableadded.designer.cs">
       <DependentUpon>202212061032574_mig1_tableadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212081250057_mig_add_message_class.cs" />
+    <Compile Include="Migrations\202212081250057_mig_add_message_class.designer.cs">
+      <DependentUpon>202212081250057_mig_add_message_class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212102138310_mig_contactadddate.cs" />
+    <Compile Include="Migrations\202212102138310_mig_contactadddate.designer.cs">
+      <DependentUpon>202212102138310_mig_contactadddate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +98,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202212061032574_mig1_tableadded.resx">
       <DependentUpon>202212061032574_mig1_tableadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212081250057_mig_add_message_class.resx">
+      <DependentUpon>202212081250057_mig_add_message_class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212102138310_mig_contactadddate.resx">
+      <DependentUpon>202212102138310_mig_contactadddate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,5 +19,14 @@ namespace MvcProje.Controllers
             var contactvalues = cm.GetList();
             return View(contactvalues);
         }
+        public ActionResult GetContactDetails(int id)
+        {
+            var contactvalues = cm.GetByID(id);
+            return View(contactvalues);
+        }
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
+        }
     }
 }
