@@ -28,9 +28,9 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public void ContentyAdd(Content content)
+        public void ContentAdd(Content content)
         {
-            throw new NotImplementedException();
+            _contentDal.Insert(content);
         }
 
         public Content GetByID(int id)
@@ -40,7 +40,7 @@ namespace BusinessLayer.Concrete
 
         public List<Content> GetList()
         {
-            throw new NotImplementedException();
+            return _contentDal.List();
         }
 
         public List<Content> GetListByHeadingID(int id)
@@ -51,6 +51,11 @@ namespace BusinessLayer.Concrete
         public List<Content> GetListByWriter(int id)
         {
             return _contentDal.List(x => x.WriterID == id);
+        }
+
+        public void ContentyAdd(Content content)
+        {
+            throw new NotImplementedException();
         }
     }
 }
